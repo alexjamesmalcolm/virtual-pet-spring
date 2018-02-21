@@ -96,11 +96,11 @@ public class VirtualPetSpringController {
 		shelter.tick();
 		if (type.equals("OrganicDog")) {
 			shelter.add(new OrganicDog(name, description));
-		} else if(type.equals("OrganicCat")) {
+		} else if (type.equals("OrganicCat")) {
 			shelter.add(new OrganicCat(name, description, litterBox));
-		} else if(type.equals("RoboticDog")) {
+		} else if (type.equals("RoboticDog")) {
 			shelter.add(new RoboticDog(name, description));
-		} else if(type.equals("RoboticCat")) {
+		} else if (type.equals("RoboticCat")) {
 			shelter.add(new RoboticCat(name, description));
 		}
 		everyRequest(model);
