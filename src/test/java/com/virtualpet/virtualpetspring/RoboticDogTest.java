@@ -1,11 +1,11 @@
 package com.virtualpet.virtualpetspring;
 
+import static com.virtualpet.virtualpetspring.Pet.DEFAULT_BOREDOM;
+import static com.virtualpet.virtualpetspring.Pet.DEFAULT_HEALTH;
+import static com.virtualpet.virtualpetspring.Robotic.DEFAULT_DRYNESS;
+import static com.virtualpet.virtualpetspring.Robotic.DRYNESS_PER_TICK;
 import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.assertThat;
-import static virtualpet.RoboticDog.DEFAULT_BOREDOM;
-import static virtualpet.RoboticDog.DEFAULT_DRYNESS;
-import static virtualpet.RoboticDog.DEFAULT_HEALTH;
-import static virtualpet.RoboticDog.DRYNESS_PER_TICK;
 
 import org.junit.Test;
 

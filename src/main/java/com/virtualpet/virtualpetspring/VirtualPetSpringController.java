@@ -5,14 +5,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import virtualpet.LitterBox;
-import virtualpet.Organic;
-import virtualpet.OrganicCat;
-import virtualpet.OrganicDog;
-import virtualpet.RoboticCat;
-import virtualpet.RoboticDog;
-import virtualpet.VirtualPetShelter;
-
 @Controller
 public class VirtualPetSpringController {
 
