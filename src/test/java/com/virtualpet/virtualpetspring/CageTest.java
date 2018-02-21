@@ -1,8 +1,8 @@
 package com.virtualpet.virtualpetspring;
 
+import static com.virtualpet.virtualpetspring.Box.DEFAULT_DIRTYNESS;
 import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.assertThat;
-import static virtualpet.Cage.DEFAULT_DIRTYNESS;
 
 import org.junit.Test;
 

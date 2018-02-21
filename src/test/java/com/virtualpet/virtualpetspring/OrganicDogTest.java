@@ -1,5 +1,6 @@
 package com.virtualpet.virtualpetspring;
 
+import static com.virtualpet.virtualpetspring.Box.DEFAULT_DIRTYNESS;
 import static com.virtualpet.virtualpetspring.Organic.DEFAULT_HUNGER;
 import static com.virtualpet.virtualpetspring.Organic.HUNGER_PER_TICK;
 import static com.virtualpet.virtualpetspring.Organic.HUNGER_TO_THIRST;
@@ -11,7 +12,6 @@ import static com.virtualpet.virtualpetspring.Pet.BOREDOM_PER_TICK;
 import static com.virtualpet.virtualpetspring.Pet.DEFAULT_HEALTH;
 import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.assertThat;
-import static virtualpet.Box.DEFAULT_DIRTYNESS;
 
 import org.junit.Before;
 import org.junit.Test;

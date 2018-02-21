@@ -1,12 +1,12 @@
 package com.virtualpet.virtualpetspring;
 
+import static com.virtualpet.virtualpetspring.Box.DEFAULT_DIRTYNESS;
 import static org.hamcrest.Matchers.containsInAnyOrder;
 import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertThat;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
-import static virtualpet.Box.DEFAULT_DIRTYNESS;
 
 import java.util.Collection;
 
@@ -320,8 +320,8 @@ public class VirtualPetShelterTest {
 	public void shouldNotAdmitWhenAdmittingAPreviouslyNamedPet() {
 		underTestState.add(new RoboticCat("Joey", "Cool"));
 		Pet joey = underTestState.getPet("Joey");
-		String className = joey.getClass().getName();
+		String className = joey.getClass().getSimpleName();
 		System.out.println(className);
-		assertThat(className.equals("virtualpet.OrganicDog"), is(true));
+		assertThat(className.equals("OrganicDog"), is(true));
 	}
 }
