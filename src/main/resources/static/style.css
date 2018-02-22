@@ -12,3 +12,7 @@ input[type="submit"]:hover {
 	background-color:lightgrey;
 	border-style: inset;
 }
+
+table {
+	text-align: center;
+}
