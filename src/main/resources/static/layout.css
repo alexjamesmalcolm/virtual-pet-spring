@@ -3,6 +3,12 @@
 	padding: 0;
 }
 
+header {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
 div.container {
 	display: grid;
 	grid-template-columns: auto;
@@ -22,6 +28,10 @@ main section {
 
 main section.stats table {
 	width: 100%;
+}
+
+main section.input > * {
+	margin: 0.15rem 0px;
 }
 
 footer {
