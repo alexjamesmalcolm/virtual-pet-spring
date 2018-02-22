@@ -1,88 +1,99 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-<title>Virtual Pet Shelter</title>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<meta http-equiv="refresh" content="0; url=localhost:8080/" />
+	<title>Virtual Pet Shelter</title>
+	<link type="text/css" href="layout.css" rel="stylesheet" />
+	<link type="text/css" href="style.css" rel="stylesheet" />
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta http-equiv="refresh" content="0; url=localhost:8080/" />
 </head>
 <body>
-	<header>
-		<h1>Virtual Pet Shelter</h1>
-	</header>
-	<section>
-		<h2>Statistics</h2>
-		<table>
-			<tr>
-				<th>Name</th>
-				<th>Type</th>
-				<th>Health</th>
-				<th>Boredom</th>
-				<th>Hunger</th>
-				<th>Thirst</th>
-				<th>Waste</th>
-				<th>Dryness</th>
-				<th>Dirtyness</th>
-			</tr>
-			<tr th:each="pet: ${shelter.getPets()}">
-				<td th:text="${pet.getName()}" />
-				<td
-					th:text="${pet.getClass().getName() == 'virtualpet.OrganicDog'} ? 'Organic Dog': (${pet.getClass().getName() == 'virtualpet.OrganicCat'} ? 'Organic Cat' : (${pet.getClass().getName() == 'virtualpet.RoboticDog'} ? 'Robotic Dog' : 'Robotic Cat'))" />
-				<td th:text="${pet.getHealth()}" />
-				<td th:text="${pet.getBoredom()}" />
-				<td th:text="${pet instanceof Organic} ? ${pet.getHunger()} : '-'" />
-				<td th:text="${pet instanceof Organic} ? ${pet.getThirst()} : '-'" />
-				<td th:text="${pet instanceof Organic} ? ${pet.getWaste()} : '-'" />
-				<td th:text="${pet instanceof Organic} ? '-' : ${pet.getDryness()}" />
-				<td
-					th:text="${pet instanceof Organic} ? ${pet.getDirtyness()} : '-'" />
-			</tr>
-		</table>
-	</section>
-	<section>
-		<h2>Input</h2>
-		<form>
-			<input type="submit" value="Feed the Organic pets" formaction="/feed" />
-		</form>
-		<form>
-			<input type="submit" value="Water the Organic pets"
-				formaction="/water" />
-		</form>
-		<form>
-			<label>Name: </label> <input type="text" name="name" /> <input
-				type="submit" value="Play with a pet" formaction="/play" />
-		</form>
-		<form>
-			<input type="submit" value="Walk the dogs" formaction="/walk" />
-		</form>
-		<form>
-			<input type="submit" value="Oil all robots" formaction="/oil" />
-		</form>
-		<form>
-			<input type="submit" value="Clean all cages" formaction="/cleanCages" />
-		</form>
-		<form>
-			<label>Name: </label> <input type="text" name="name" /> <input
-				type="submit" value="Adopt a pet" formaction="/adopt" />
-		</form>
-		<form>
-			<input type="submit" value="Empty litter box"
-				formaction="/emptyLitterBox" />
-		</form>
-		<form>
-			<label>Name: </label> <input type="text" name="name" /> <label>Description:
-			</label> <input type="text" name="description" /> <input type="radio"
-				name="type" value="OrganicDog" /> <label>Organic Dog</label> <input
-				type="radio" name="type" value="OrganicCat" /> <label>Organic
-				Cat</label> <input type="radio" name="type" value="RoboticDog" /> <label>Robotic
-				Dog</label> <input type="radio" name="type" value="RoboticCat" /> <label>Robotic
-				Cat</label> <input type="submit" value="Admit a pet" formaction="/admit" />
-		</form>
-		<form>
-			<input type="submit" value="Quit" formaction="/quit" />
-		</form>
-		<form>
-			<input type="submit" value="Restart" formaction="/restart" />
-		</form>
-	</section>
+	<div class="container">
+		<header>
+			<h1>Virtual Pet Shelter</h1>
+		</header>
+		<main>
+			<section class="stats">
+				<h2>Statistics</h2>
+				<table>
+					<tr>
+						<th>Name</th>
+						<th>Type</th>
+						<th>Health</th>
+						<th>Boredom</th>
+						<th>Hunger</th>
+						<th>Thirst</th>
+						<th>Waste</th>
+						<th>Dryness</th>
+						<th>Dirtyness</th>
+					</tr>
+					<tr th:each="pet: ${shelter.getPets()}">
+						<td th:text="${pet.getName()}" />
+						<td
+						th:text="${pet.getClass().getSimpleName() == 'OrganicDog'} ? 'Organic Dog': (${pet.getClass().getSimpleName() == 'OrganicCat'} ? 'Organic Cat' : (${pet.getClass().getSimpleName() == 'RoboticDog'} ? 'Robotic Dog' : 'Robotic Cat'))" />
+						<td th:text="${pet.getHealth()}" />
+						<td th:text="${pet.getBoredom()}" />
+						<td th:text="${pet instanceof Organic} ? ${pet.getHunger()} : '-'" />
+						<td th:text="${pet instanceof Organic} ? ${pet.getThirst()} : '-'" />
+						<td th:text="${pet instanceof Organic} ? ${pet.getWaste()} : '-'" />
+						<td th:text="${pet instanceof Organic} ? '-' : ${pet.getDryness()}" />
+						<td
+						th:text="${pet instanceof Organic} ? ${pet.getDirtyness()} : '-'" />
+					</tr>
+				</table>
+			</section>
+			<section class="input">
+				<h2>Input</h2>
+				<form>
+					<input type="submit" value="Feed the Organic pets" formaction="/feed" />
+				</form>
+				<form>
+					<input type="submit" value="Water the Organic pets"
+					formaction="/water" />
+				</form>
+				<form>
+					<label>Name: </label> <input type="text" name="name" /> <input
+					type="submit" value="Play with a pet" formaction="/play" />
+				</form>
+				<form>
+					<input type="submit" value="Walk the dogs" formaction="/walk" />
+				</form>
+				<form>
+					<input type="submit" value="Oil all robots" formaction="/oil" />
+				</form>
+				<form>
+					<input type="submit" value="Clean all cages" formaction="/cleanCages" />
+				</form>
+				<form>
+					<label>Name: </label> <input type="text" name="name" /> <input
+					type="submit" value="Adopt a pet" formaction="/adopt" />
+				</form>
+				<form>
+					<input type="submit" value="Empty litter box"
+					formaction="/emptyLitterBox" />
+				</form>
+				<form>
+					<label>Name: </label> <input type="text" name="name" /> <label>Description:
+					</label> <input type="text" name="description" /> <input type="radio"
+					name="type" value="OrganicDog" /> <label>Organic Dog</label> <input
+					type="radio" name="type" value="OrganicCat" /> <label>Organic
+					Cat</label> <input type="radio" name="type" value="RoboticDog" /> <label>Robotic
+					Dog</label> <input type="radio" name="type" value="RoboticCat" /> <label>Robotic
+					Cat</label> <input type="submit" value="Admit a pet" formaction="/admit" />
+				</form>
+				<form>
+					<input type="submit" value="Quit" formaction="/quit" />
+				</form>
+				<form>
+					<input type="submit" value="Restart" formaction="/restart" />
+				</form>
+			</section>
+		</main>
+		<footer>
+			<small>Made by Alexander Malcolm</small>
+			<small><a href="https://github.com/alexjamesmalcolm">GitHub</a></small>
+			<small><a href="https://www.linkedin.com/in/alexjamesmalcolm/">LinkedIn</a></small>
+		</footer>
+	</div>
 </body>
 </html>
