@@ -1,0 +1,35 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+div.container {
+	display: grid;
+	grid-template-columns: auto;
+	grid-template-rows: minmax(min-content, 3em) auto 2em;
+	height:100vh;
+}
+
+main {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+main section {
+	margin: 1em;
+}
+
+main section.stats table {
+	width: 100%;
+}
+
+footer {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+footer small {
+	margin: 0px 0.5em;
+}

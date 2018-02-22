@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css?family=Cousine|Open+Sans');
+
+* {
+	font-family: 'Cousine', monospace;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Open Sans', sans-serif;
+}
+
+/*
+font-family: 'Cousine', monospace;
+font-family: 'Open Sans', sans-serif;
+*/
